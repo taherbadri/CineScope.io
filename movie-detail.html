@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CineScope | Movie Details</title>
+        <link rel="stylesheet" href="styles.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="spinner.css">
+        <link rel="stylesheet" href="./lib/swiper.css">
+        <link rel="stylesheet" href="./lib/fontawesome.css">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+            defer></script>
+    </head>
+
+    <body class="text-bg-dark">
+
+        <!-- Header Containing Nav Bar -->
+        <header class="navbar navbar-expand-md navbar-dark bg-dark p-3 shadow">
+            <div class="container">
+                <a href="./index.html" class="navbar-brand">CineScope</a>
+                <button type="button" class="navbar-toggler"
+                    data-bs-toggle="collapse" data-bs-target="#choice">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="choice">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href class="nav-link">Movies</a></li>
+                        <li class="nav-item"><a href class="nav-link">TV Shows</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Back to Movies page button -->
+        <section class="container my-5 px-5">
+            <button class="btn btn-outline-warning col-12 col-md-3 col-lg-2">Back
+                to
+                Movies</button>
+        </section>
+
+        <!-- movie details section -->
+        <div class="row mx-5">
+            <div
+                class="col-md-6 col-lg-4 d-flex align-items-center justify-content-center"><img
+                    src="./images/no-image.jpg"
+                    class="img-fluid"></div>
+            <div
+                class="container col-md-6 col-lg-8 d-flex flex-column justify-content-center mt-5">
+                <h3 class="text-center">Movie Title</h3>
+                <p class="mt-3"> <span class="fa fa-star text-warning"></span> 8
+                    / 10</p>
+                <p class="mt-3">Release Date : xx/xx/xxx</p>
+                <p class="mt-3">Lorem, ipsum dolor sit amet consectetur
+                    adipisicing elit. Nulla hic quae corporis expedita debitis
+                    quasi quas non nemo sapiente deserunt, at consequuntur,
+                    neque veritatis dicta doloremque accusantium reiciendis et,
+                    consequatur eos. Possimus consequuntur adipisci itaque,
+                    culpa inventore sequi eos neque ratione, vitae quaerat iste?
+                    Iste eius possimus totam officiis repudiandae.</p>
+                <p class="fw-bold fs-5">Genres : </p>
+                <p class="my-0">Genre 1</p>
+                <p class="my-0">Genre 2</p>
+                <p class="my-0">Genre 3</p>
+                <button class="btn btn-outline-warning col-md-9 col-lg-3 mt-3">Visit
+                    Movie
+                    Homepage</button>
+            </div>
+        </div>
+
+        <!-- Movie Info Section -->
+        <div class="container p-3">
+            <ul class="list-group mb-5 vstack gap-2">
+                <h3 class="text-center">Movie Info</h3>
+                <li
+                    class="list-group-item border-0 border-bottom border-secondary text-bg-dark"><span
+                        class="text-warning">Budget: </span> $1,000,000</li>
+                <li
+                    class="list-group-item border-0 border-bottom border-secondary text-bg-dark"><span
+                        class="text-warning">Revenue: </span>$2,000,000</li>
+                <li
+                    class="list-group-item border-0 border-bottom border-secondary text-bg-dark"><span
+                        class="text-warning">Runtime: </span> 90 minutes</li>
+                <li
+                    class="list-group-item border-0 border-bottom border-secondary text-bg-dark"><span
+                        class="text-warning">Status: </span> Released</li>
+                <li
+                    class="list-group-item border-0 text-bg-dark"><h5>Production
+                        Companies </h5> Company 1, Company 2</li>
+            </ul>
+        </div>
+
+        <script src="script.js"></script>
+        <script src="./lib/swiper.js"></script>
+    </body>
+
+</html>

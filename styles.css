@@ -26,8 +26,10 @@ div.card{
     transform: scale(0.92);
     transition: all 0.5s;
     cursor: pointer;
+    opacity: 0.9;
 }
 div.card:hover{
     background-color: #0a4b8f;
-    transform: scale(1);
+    transform: scale(0.97);
+    opacity: 1;
 }
