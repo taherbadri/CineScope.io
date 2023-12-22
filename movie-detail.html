@@ -21,20 +21,24 @@
             defer></script>
     </head>
 
-    <body class="text-bg-dark">
+    <body class="text-bg-dark ">
 
         <!-- Header Containing Nav Bar -->
-        <header class="navbar navbar-expand-md navbar-dark bg-dark p-3 shadow">
-            <div class="container">
-                <a href="./index.html" class="navbar-brand">CineScope</a>
+        <header class="navbar navbar-expand-md navbar-dark bg-dark p-2 shadow">
+            <div class="container mt-2 mb-0">
+                <a href="./index.html"
+                    class="navbar-brand fw-bold">FlixSphere</a>
                 <button type="button" class="navbar-toggler"
                     data-bs-toggle="collapse" data-bs-target="#choice">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="choice">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a href class="nav-link">Movies</a></li>
-                        <li class="nav-item"><a href class="nav-link">TV Shows</a></li>
+                        <li class="nav-item"><a href='./index.html'
+                                class="nav-link">Movies</a></li>
+                        <li class="nav-item"><a href="./shows.html"
+                                class="nav-link">TV
+                                Shows</a></li>
                     </ul>
                 </div>
             </div>
@@ -42,14 +46,15 @@
 
         <!-- Back to Movies page button -->
         <section class="container my-5 px-5">
-            <button class="btn btn-outline-warning col-12 col-md-3 col-lg-2">Back
+            <a href="./index.html"
+                class="btn btn-outline-warning col-12 col-md-3 col-lg-2">Back
                 to
-                Movies</button>
+                Movies</a>
         </section>
 
         <!-- movie details section -->
-        <div class="row mx-5">
-            <div
+        <div class="row movie-details position-relative p-3 rounded">
+            <!-- <div
                 class="col-md-6 col-lg-4 d-flex align-items-center justify-content-center"><img
                     src="./images/no-image.jpg"
                     class="img-fluid"></div>
@@ -70,15 +75,16 @@
                 <p class="my-0">Genre 1</p>
                 <p class="my-0">Genre 2</p>
                 <p class="my-0">Genre 3</p>
-                <button class="btn btn-outline-warning col-md-9 col-lg-3 mt-3">Visit
+                <button
+                    class="btn btn-outline-warning col-md-9 col-lg-3 mt-3">Visit
                     Movie
                     Homepage</button>
-            </div>
+            </div> -->
         </div>
 
         <!-- Movie Info Section -->
-        <div class="container p-3">
-            <ul class="list-group mb-5 vstack gap-2">
+        <div class="container p-3 movie-info">
+            <!-- <ul class="list-group mb-5 vstack gap-2">
                 <h3 class="text-center">Movie Info</h3>
                 <li
                     class="list-group-item border-0 border-bottom border-secondary text-bg-dark"><span
@@ -95,8 +101,9 @@
                 <li
                     class="list-group-item border-0 text-bg-dark"><h5>Production
                         Companies </h5> Company 1, Company 2</li>
-            </ul>
+            </ul> -->
         </div>
+        <div class="spinner"></div>
 
         <script src="script.js"></script>
         <script src="./lib/swiper.js"></script>

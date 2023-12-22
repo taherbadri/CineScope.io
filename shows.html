@@ -24,34 +24,51 @@
     <body class="text-bg-dark">
 
         <!-- Header Containing Nav Bar -->
-        <header class="navbar navbar-expand-md navbar-dark bg-dark p-3 shadow">
-            <div class="container">
-                <a href="./index.html" class="navbar-brand">CineScope</a>
+        <header class="navbar navbar-expand-md navbar-dark bg-dark p-2">
+            <div class="container mt-2 mb-0">
+                <a href="./index.html"
+                    class="navbar-brand fw-bold">FlixSphere</a>
                 <button type="button" class="navbar-toggler"
                     data-bs-toggle="collapse" data-bs-target="#choice">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="choice">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a href class="nav-link">Movies</a></li>
-                        <li class="nav-item"><a href class="nav-link">TV Shows</a></li>
+                        <li class="nav-item"><a href='./index.html'
+                                class="nav-link">Movies</a></li>
+                        <li class="nav-item"><a href="./shows.html"
+                                class="nav-link">TV
+                                Shows</a></li>
                     </ul>
                 </div>
             </div>
         </header>
 
-        <!-- Search Box -->
-        <div
-            class="container mt-3 d-flex align-items-center justify-content-center p-3">
+        <!-- Now Playing Section -->
+        <section class="now-playing">
+            <h2 class="text-center mt-3 py-2">Airing Today</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
 
-            <h3>Popular TV Shows</h3>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Browsing Tiles -->
-        <div class="container">
-            <div class="row first-row">
-                <div class="card col-lg-3 col-md-3 pt-2">
-                    <img src="./images/no-image.jpg" alt class="card-img">
+    <!-- Search Box -->
+    <div
+        class="container mt-3 d-flex align-items-center justify-content-center p-3">
+
+        <h3>Popular TV Shows</h3>
+    </div>
+
+    <!-- Browsing Tiles -->
+    <div class="container">
+        <div class="row first-row">
+            <!-- <div class="card col-lg-3 col-md-3 pt-2">
+                    <a href="./movie-detail.html?id">
+                        <img src="./images/no-image.jpg" alt
+                            class="card-img"></a>
                     <div class="card-body">
                         <h5 class="card-title">Title</h5>
                         <p class="crad-text">Release : xx/xx/xxxx</p>
@@ -107,11 +124,12 @@
                         <h5 class="card-title">Title</h5>
                         <p class="crad-text">Release : xx/xx/xxxx</p>
                     </div>
-                </div>
-            </div>
+                </div> -->
+        </div>
+        <div class="spinner"></div>
 
-            <script src="script.js"></script>
-            <script src="./lib/swiper.js"></script>
-        </body>
+        <script src="script.js"></script>
+        <script src="./lib/swiper.js"></script>
+    </body>
 
-    </html>
+</html>

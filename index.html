@@ -4,13 +4,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CineScope</title>
+        <title>ReelSphere</title>
         <link rel="stylesheet" href="styles.css">
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+            rel="stylesheet" />
         <link rel="stylesheet" href="spinner.css">
         <link rel="stylesheet" href="./lib/swiper.css">
         <link rel="stylesheet" href="./lib/fontawesome.css">
@@ -21,117 +24,136 @@
             defer></script>
     </head>
 
-    <body class="text-bg-dark">
+    <body class="text-bg-dark" style="font-family: cursive;">
 
         <!-- Header Containing Nav Bar -->
-        <header class="navbar navbar-expand-md navbar-dark bg-dark p-3">
-            <div class="container">
-                <a href="./index.html" class="navbar-brand">CineScope</a>
+        <header class="navbar navbar-expand-md navbar-dark bg-dark p-2">
+            <div
+                class="container mt-2 mb-0">
+                <a href="./index.html" class="navbar-brand fw-bold">
+                    <!-- <img
+                        src="./images/logo.jpg"
+                        class="img-fluid rounded-circle pb-0 mb-0"
+                        style="width: 5%;">-->
+                    FlixSphere
+                </a>
                 <button type="button" class="navbar-toggler"
                     data-bs-toggle="collapse" data-bs-target="#choice">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="choice">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a href class="nav-link">Movies</a></li>
-                        <li class="nav-item"><a href class="nav-link">TV Shows</a></li>
+                        <li class="nav-item"><a href='./index.html'
+                                class="nav-link">Movies</a></li>
+                        <li class="nav-item"><a href="./shows.html"
+                                class="nav-link">TV
+                                Shows</a></li>
                     </ul>
                 </div>
             </div>
         </header>
 
         <!-- Now Playing Section -->
-        <section
-            class="now-playing d-flex align-items-center justify-content-center">
-            <h2>Now
-                Playing</h2>
-        </section>
+        <section class="now-playing">
+            <h2 class="text-center mt-3 py-2">New Releases</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
 
-        <!-- Search Box -->
-        <div
-            class="container d-flex align-items-center justify-content-center p-3 search-box">
-            <form action class=" w-50 p-3">
-                <div class="container radio-div hstack p-2">
-                    <label for="movie" class="form-label mx-2"><input
-                            type="radio" id="movie" name="tv-movie" checked>
-                        Movies</label><label for="tv" class="form-label mx-2"><input
-                            name="tv-movie" id="tv" type="radio"
-                            class> TV Shows</label>
                 </div>
-                <div class="conatiner searchbar-div hstack p-2">
-                    <input type="text"
-                        class="form-control text-bg-dark p-2"
-                        placeholder="Enter Search term">
-                    <button class="btn btn-outline-warning p-2 w-25 mx-2"><span
-                            class="fa fa-search"></span></button>
-                </div>
-            </form>
+            </div>
         </div>
+    </section>
 
-        <!-- Browsing Tiles -->
-        <div class="container">
-            <div class="row first-row">
-                <div class="card col-lg-3 col-md-3 pt-2">
-                    <img src="./images/no-image.jpg" alt class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="crad-text">Release : xx/xx/xxxx</p>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-3 pt-2">
-                    <img src="./images/no-image.jpg" alt class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="crad-text">Release : xx/xx/xxxx</p>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-3 pt-2">
-                    <img src="./images/no-image.jpg" alt class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="crad-text">Release : xx/xx/xxxx</p>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-3 pt-2">
-                    <img src="./images/no-image.jpg" alt class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="crad-text">Release : xx/xx/xxxx</p>
-                    </div>
-                </div>
+    <!-- Search Box -->
+    <div
+        class="container d-flex align-items-center justify-content-center p-3 search-box">
+        <form action="./search-page.html" class="p-3">
+            <div class="container radio-div hstack p-2">
+                <label for="movie" class="form-label mx-2"><input type="radio"
+                        id="movie" name="type" value="movie" checked>
+                    Movies</label><label for="tv" class="form-label mx-2"><input
+                        name="type" id="tv" type="radio" value="tv"
+                        class> TV Shows</label>
             </div>
-            <div class="row second-row">
-                <div class="card col-lg-3 col-md-3 pt-2">
-                    <img src="./images/no-image.jpg" alt class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="crad-text">Release : xx/xx/xxxx</p>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-3 pt-2">
-                    <img src="./images/no-image.jpg" alt class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="crad-text">Release : xx/xx/xxxx</p>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-3 pt-2">
-                    <img src="./images/no-image.jpg" alt class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="crad-text">Release : xx/xx/xxxx</p>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-3 pt-2">
-                    <img src="./images/no-image.jpg" alt class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="crad-text">Release : xx/xx/xxxx</p>
-                    </div>
-                </div>
+            <div class="container searchbar-div hstack p-2">
+                <input type="text" name="search-term"
+                    class="form-control text-bg-dark p-2 col-sm-10"
+                    placeholder="Enter Search term">
+                <button
+                    class="btn btn-outline-warning p-2 w-25 mx-2 col-sm-2"><span
+                        class="fa fa-search"></span></button>
             </div>
-            <script src="script.js"></script>
-            <script src="./lib/swiper.js"></script>
-        </body>
+        </form>
+    </div>
 
-    </html>
+    <!-- Browsing Tiles -->
+    <div class="container">
+        <h2 class="text-center">Popular Movies</h2>
+        <div class="row first-row ">
+        </div>
+        <!-- <div class="card col-lg-3 col-md-3 pt-2">
+                    <img src="./images/no-image.jpg" alt class="card-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="crad-text">Release : xx/xx/xxxx</p>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-3 pt-2">
+                    <img src="./images/no-image.jpg" alt class="card-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="crad-text">Release : xx/xx/xxxx</p>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-3 pt-2">
+                    <img src="./images/no-image.jpg" alt class="card-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="crad-text">Release : xx/xx/xxxx</p>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-3 pt-2">
+                    <img src="./images/no-image.jpg" alt class="card-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="crad-text">Release : xx/xx/xxxx</p>
+                    </div>
+                </div> -->
+
+        <!-- <div class="row second-row">
+                <div class="card col-lg-3 col-md-3 pt-2">
+                    <img src="./images/no-image.jpg" alt class="card-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="crad-text">Release : xx/xx/xxxx</p>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-3 pt-2">
+                    <img src="./images/no-image.jpg" alt class="card-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="crad-text">Release : xx/xx/xxxx</p>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-3 pt-2">
+                    <img src="./images/no-image.jpg" alt class="card-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="crad-text">Release : xx/xx/xxxx</p>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-3 pt-2">
+                    <img src="./images/no-image.jpg" alt class="card-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="crad-text">Release : xx/xx/xxxx</p>
+                    </div>
+                </div> 
+            </div>
+        -->
+        <div class="spinner"></div>
+        <script src="script.js"></script>
+        <script src="./lib/swiper.js"></script>
+    </body>
+
+</html>
