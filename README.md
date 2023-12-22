@@ -1,6 +1,6 @@
 # FlixSphere.io
 # FlixSphere: Explore the Cinematic Universe
-CineScope is your ultimate companion for all things movies. 
+FlixSphere is your ultimate companion for all things movies. 
 Dive into a vast database of films, from timeless classics to the latest blockbusters, at your fingertips. 
 Discover details about movies, directors, actors, and more in an immersive and user-friendly interface.
 
