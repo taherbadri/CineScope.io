@@ -314,9 +314,9 @@ const highlight = () => {
 
 //  this fn is to check which page is currently live
 const page = (e) => {
+	console.log(global.currentPage);
 	switch (global.currentPage) {
-		case "/":
-		case "/index.html":
+		case "/" || "/index.html" || "/CineScope.io/index.html":
 			swiper("movie/upcoming");
 			popularMovies();
 			console.log("Home");
