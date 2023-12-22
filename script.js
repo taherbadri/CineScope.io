@@ -319,8 +319,8 @@ const page = (e) => {
 	switch (global.currentPage) {
 		case "/":
 		case "/index.html":
-		case "/CineScope.io/index.html":
 		case "/C:/Users/Lenovo/OneDrive/Desktop/FSDC/Javascript/Projects/CineScope.io/index.html":
+		case "/CineScope.io/index.html":
 			swiper("movie/upcoming");
 			popularMovies();
 			console.log("Home");
