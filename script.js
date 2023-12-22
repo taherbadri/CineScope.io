@@ -50,6 +50,7 @@ const swiper = async (end) => {
 
 	swiperInit();
 };
+
 function swiperInit() {
 	const swiper = new Swiper(".swiper", {
 		slidesPerView: 1,
@@ -316,7 +317,10 @@ const highlight = () => {
 const page = (e) => {
 	console.log(global.currentPage);
 	switch (global.currentPage) {
-		case "/" || "/index.html" || "/CineScope.io/index.html":
+		case "/":
+		case "/index.html":
+		case "/CineScope.io/index.html":
+		case "/C:/Users/Lenovo/OneDrive/Desktop/FSDC/Javascript/Projects/CineScope.io/index.html":
 			swiper("movie/upcoming");
 			popularMovies();
 			console.log("Home");
