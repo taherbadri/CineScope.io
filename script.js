@@ -315,8 +315,7 @@ const highlight = () => {
 //  this fn is to check which page is currently live
 const page = (e) => {
 	switch (global.currentPage) {
-		case "/":
-		case "/index.html":
+		case "/" || "/index.html":
 			swiper("movie/upcoming");
 			popularMovies();
 			console.log("Home");
@@ -339,8 +338,6 @@ const page = (e) => {
 			break;
 
 		default:
-			swiper("movie/upcoming");
-			popularMovies();
 			console.log("Index or Home");
 			break;
 	}
