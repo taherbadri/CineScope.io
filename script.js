@@ -7,7 +7,8 @@ const fetchData = async (end) => {
 	const API_KEY = "3901dc55c571b8f2ddd2866c9664988f";
 	const API_URL = "https://api.themoviedb.org/3/";
 
-	const response = await fetch(`${API_URL}${end}?api_key=${API_KEY}`);
+	const response = await fetch(`${API_URL}${end}?api_key=${API_KEY}
+	`);
 	const data = await response.json();
 	return data;
 };
@@ -75,7 +76,8 @@ function swiperInit() {
 // popular movies fn
 const popularMovies = async () => {
 	loadingStart();
-	const { results } = await fetchData("movie/popular");
+	const { results } = await fetchData("discover/movie");
+	console.log(results);
 	loadingEnd();
 	const firstRow = document.querySelector(".first-row");
 	results.forEach((movie) => {
@@ -337,6 +339,8 @@ const page = (e) => {
 			break;
 
 		default:
+			swiper("movie/upcoming");
+			popularMovies();
 			console.log("Index or Home");
 			break;
 	}
