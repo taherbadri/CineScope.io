@@ -24,9 +24,12 @@ const fetchData = async (end) => {
 
 // data searching fn
 const searchData = async () => {
-	const response =
-		await fetch(`${global.API.API_URL}search/${global.search.type}?api_key=${global.API.API_KEY}&query=${global.search.term}&page=${global.search.page}&include_adult=true
-	`);
+	const response = await fetch(
+		`${global.API.API_URL}search/${global.search.type}?api_key=${global.API.API_KEY}&query=${global.search.term}&page=${global.search.page}`
+	);
+	// const response =
+	// 	await fetch(`${global.API.API_URL}search/${global.search.type}?api_key=${global.API.API_KEY}&query=${global.search.term}&page=${global.search.page}&include_adult=true
+	// `);
 	const data = await response.json();
 	return data;
 };
