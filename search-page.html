@@ -44,32 +44,36 @@
             </div>
         </header>
 
-        <!-- Search Box -->
         <div
-            class="container d-flex align-items-center justify-content-center p-3 search-box">
-            <form action class=" w-50 p-3">
-                <div class="container radio-div hstack p-2">
+            class="container p-3 search-box">
+            <form action="./search-page.html" class="p-3">
+                <div
+                    class="container radio-div hstack align-items-center justify-content-center p-2">
                     <label for="movie" class="form-label mx-2"><input
-                            type="radio" id="movie" name="tv-movie" checked>
+                            type="radio"
+                            id="movie" name="type" value="movie" checked>
                         Movies</label><label for="tv"
                         class="form-label mx-2"><input
-                            name="tv-movie" id="tv" type="radio"
+                            name="type" id="tv" type="radio" value="tv"
                             class> TV Shows</label>
                 </div>
-                <div class="conatiner searchbar-div hstack p-2">
-                    <input type="text"
-                        class="form-control text-bg-dark p-2"
-                        placeholder="Enter Search term">
-                    <button class="btn btn-outline-warning p-2 w-25 mx-2"><span
+                <div
+                    class="container row searchbar-div w-100 hstack justify-content-center gap-2">
+                    <label class="col-sm-12 col-md-6 p-0">
+                        <input type="text" name="search-term"
+                            class="form-control text-bg-dark p-2"
+                            placeholder="Enter Search term"></label>
+                    <button
+                        class="btn btn-outline-warning p-2 col-sm-12 col-md-2"><span
                             class="fa fa-search"></span></button>
                 </div>
             </form>
         </div>
-
         <!-- Browsing Tiles -->
         <div class="container">
+            <h4 class="result-count fw-light text-center"></h4>
             <div class="row first-row">
-                <div class="card col-lg-3 col-md-3 pt-2">
+                <!-- <div class="card col-lg-3 col-md-3 pt-2">
                     <img src="./images/no-image.jpg" alt class="card-img">
                     <div class="card-body">
                         <h5 class="card-title">Title</h5>
@@ -125,21 +129,22 @@
                     <div class="card-body">
                         <h5 class="card-title">Title</h5>
                         <p class="crad-text">Release : xx/xx/xxxx</p>
-                    </div>
-                </div>
-
-                <!-- pagination -->
-                <div class="container p-3">
-                    <button
-                        class="btn btn-outline-warning mx-1">Prev</button><button
-                        class="btn btn-outline-warning mx-1">Next</button>
-                    <p class="fw-bold py-2 px-1">Page 1 of 5</p>
-                </div>
+                    </div> -->
             </div>
-            <div class="spinner"></div>
 
-            <script src="script.js"></script>
-            <script src="./lib/swiper.js"></script>
-        </body>
+            <!-- pagination -->
+            <div class="container p-3">
+                <button
+                    class="btn btn-outline-warning mx-1"
+                    id="prev">Prev</button><button
+                    class="btn btn-outline-warning mx-1" id="next">Next</button>
+                <p class="fw-bold py-2 px-1 page-number"></p>
+            </div>
+        </div>
+        <div class="spinner"></div>
 
-    </html>
+        <script src="script.js"></script>
+        <script src="./lib/swiper.js"></script>
+    </body>
+
+</html>

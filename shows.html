@@ -45,8 +45,8 @@
         </header>
 
         <!-- Now Playing Section -->
-        <section class="now-playing">
-            <h2 class="text-center mt-3 py-2">Airing Today</h2>
+        <section class="now-playing p-3">
+            <h3 class="text-center p-3">Airing Today</h3>
             <div class="swiper">
                 <div class="swiper-wrapper">
 
@@ -56,14 +56,34 @@
     </section>
 
     <!-- Search Box -->
+    <!-- Search Box -->
     <div
-        class="container mt-3 d-flex align-items-center justify-content-center p-3">
-
-        <h3>Popular TV Shows</h3>
+        class="container p-3 search-box">
+        <form action="./search-page.html" class="p-3">
+            <div
+                class="container radio-div hstack align-items-center justify-content-center p-2">
+                <label for="movie" class="form-label mx-2"><input type="radio"
+                        id="movie" name="type" value="movie">
+                    Movies</label><label for="tv" class="form-label mx-2"><input
+                        name="type" id="tv" type="radio" value="tv"
+                        checked> TV Shows</label>
+            </div>
+            <div
+                class="container row searchbar-div w-100 hstack justify-content-center gap-2">
+                <label class="col-sm-12 col-md-6 p-0">
+                    <input type="text" name="search-term"
+                        class="form-control text-bg-dark p-2"
+                        placeholder="Search TV Shows"></label>
+                <button
+                    class="btn btn-outline-warning p-2 col-sm-12 col-md-2"><span
+                        class="fa fa-search"></span></button>
+            </div>
+        </form>
     </div>
 
     <!-- Browsing Tiles -->
     <div class="container">
+        <h2 class="text-center">Popular TV Shows</h2>
         <div class="row first-row">
             <!-- <div class="card col-lg-3 col-md-3 pt-2">
                     <a href="./movie-detail.html?id">

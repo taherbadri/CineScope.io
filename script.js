@@ -1,24 +1,161 @@
 const global = {
 	currentPage: window.location.pathname,
+	API: {
+		API_KEY: "3901dc55c571b8f2ddd2866c9664988f",
+		API_URL: "https://api.themoviedb.org/3/",
+	},
+	search: {
+		term: "",
+		type: "",
+		page: 1,
+		totalPages: 1,
+		totalResults: 0,
+	},
 };
 
 // this function is made to fetch data from TMDB
 const fetchData = async (end) => {
-	const API_KEY = "3901dc55c571b8f2ddd2866c9664988f";
-	const API_URL = "https://api.themoviedb.org/3/";
-
-	const response = await fetch(`${API_URL}${end}?api_key=${API_KEY}
+	const response =
+		await fetch(`${global.API.API_URL}${end}?api_key=${global.API.API_KEY}
 	`);
 	const data = await response.json();
 	return data;
 };
 
+// data searching fn
+const searchData = async () => {
+	const response =
+		await fetch(`${global.API.API_URL}search/${global.search.type}?api_key=${global.API.API_KEY}&query=${global.search.term}&page=${global.search.page}&include_adult=true
+	`);
+	const data = await response.json();
+	return data;
+};
+
+// loder
 const loadingStart = () => {
 	document.querySelector(".spinner").classList.add("show");
 };
 const loadingEnd = () => {
 	document.querySelector(".spinner").classList.remove("show");
 };
+
+// alert functionality
+const alertUser = (className) => {
+	const input = document.querySelector(".form-control");
+	input.style.transition = "all 0.5s";
+	input.classList.add(className);
+
+	setTimeout(() => {
+		input.classList.remove(className);
+	}, 3000);
+};
+
+// search functionality
+const search = async () => {
+	const query = window.location.search;
+	console.log(query);
+	const urlParams = new URLSearchParams(query);
+	global.search.type = urlParams.get("type");
+	global.search.term = urlParams.get("search-term");
+
+	if (global.search.term !== "" && global.search.term !== null) {
+		// make request and display result
+		alertUser("border-success");
+		const { results, total_pages, total_results, page } = await searchData();
+		global.search.page = page;
+		global.search.totalPages = total_pages;
+		global.search.totalResults = total_results;
+
+		if (Array.from(results).length === 0) {
+			const firstRow = document.querySelector(".first-row");
+			firstRow.innerHTML = `<h1 class="text-center">No Results Found</h1>`;
+			firstRow.classList.toggle("text-danger");
+			alertUser("border-danger");
+		}
+		console.log(results);
+		searchResults(results);
+	} else {
+		alertUser("border-danger");
+	}
+};
+
+// display search results
+const searchResults = async (results) => {
+	loadingStart();
+	const firstRow = document.querySelector(".first-row");
+	const resultCount = document.querySelector(".result-count");
+	firstRow.innerHTML = "";
+
+	await results;
+
+	if (global.search.type === "movie") {
+		results.forEach((movie) => {
+			resultCount.innerHTML = `Found ${global.search.totalResults} results for ${global.search.term}`;
+			firstRow.innerHTML += `<div class="card col-sm-12 col-lg-3 col-md-6 pt-2">
+        <a href="./movie-detail.html?id=${movie.id}" target="_blank">
+        ${
+					movie.poster_path
+						? `<img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt class="card-img">`
+						: `<img src="./images/no-image.jpg" alt
+        class="card-img">`
+				}
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">${movie.title}</h5>
+            <p class="crad-text">Release Date : ${movie.release_date}</p>
+        </div>`;
+		});
+	} else if (global.search.type === "tv") {
+		resultCount.innerHTML = `Found ${global.search.totalResults} results for ${global.search.term}`;
+		const firstRow = document.querySelector(".first-row");
+		results.forEach((show) => {
+			firstRow.innerHTML += `<div class="card col-sm-12 col-md-6 col-lg-3 pt-2">
+        <a href="./show-detail.html?id=${show.id}" target="_blank">
+        ${
+					show.poster_path
+						? `<img src="https://image.tmdb.org/t/p/w500${show.poster_path}" alt class="card-img">`
+						: `<img src="./images/no-image.jpg" alt
+        class="card-img">`
+				}
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">${show.name}</h5>
+            <p class="crad-text">First Air Date : ${show.first_air_date}</p>
+        </div>`;
+		});
+	}
+	pagination();
+	loadingEnd();
+};
+
+// pgination functionality
+const pagination = () => {
+	const prev = document.getElementById("prev");
+	const next = document.getElementById("next");
+	const pageNumber = document.querySelector(".page-number");
+	pageNumber.innerHTML = `Page ${global.search.page} of ${global.search.totalPages}`;
+
+	global.search.page === global.search.totalPages
+		? next.classList.add("disabled")
+		: prev.classList.remove("disabled");
+
+	global.search.page === 1
+		? prev.classList.add("disabled")
+		: prev.classList.remove("disabled");
+	console.log(global.search.page);
+};
+
+document.getElementById("prev").addEventListener("click", async () => {
+	global.search.page--;
+	const { results, total_pages } = await searchData();
+	searchResults(results);
+});
+document.getElementById("next").addEventListener("click", async () => {
+	global.search.page++;
+	const { results, total_pages } = await searchData();
+
+	searchResults(results);
+});
 
 // swiper
 const swiper = async (end) => {
@@ -77,7 +214,7 @@ function swiperInit() {
 // popular movies fn
 const popularMovies = async () => {
 	loadingStart();
-	const { results } = await fetchData("discover/movie");
+	const { results } = await fetchData("movie/popular");
 	console.log(results);
 	loadingEnd();
 	const firstRow = document.querySelector(".first-row");
@@ -343,6 +480,7 @@ const page = (e) => {
 			break;
 		case "/CineScope.io/search-page.html":
 		case "/search-page.html":
+			search();
 			console.log("Search Page");
 			break;
 

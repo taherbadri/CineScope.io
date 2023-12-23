@@ -54,8 +54,8 @@
         </header>
 
         <!-- Now Playing Section -->
-        <section class="now-playing">
-            <h2 class="text-center mt-3 py-2">New Releases</h2>
+        <section class="now-playing p-3">
+            <h3 class="text-center p-3">New Releases</h3>
             <div class="swiper">
                 <div class="swiper-wrapper">
 
@@ -66,21 +66,24 @@
 
     <!-- Search Box -->
     <div
-        class="container d-flex align-items-center justify-content-center p-3 search-box">
+        class="container p-3 search-box">
         <form action="./search-page.html" class="p-3">
-            <div class="container radio-div hstack p-2">
+            <div
+                class="container radio-div hstack align-items-center justify-content-center p-2">
                 <label for="movie" class="form-label mx-2"><input type="radio"
                         id="movie" name="type" value="movie" checked>
                     Movies</label><label for="tv" class="form-label mx-2"><input
                         name="type" id="tv" type="radio" value="tv"
                         class> TV Shows</label>
             </div>
-            <div class="container searchbar-div hstack p-2">
-                <input type="text" name="search-term"
-                    class="form-control text-bg-dark p-2 col-sm-10"
-                    placeholder="Enter Search term">
+            <div
+                class="container row searchbar-div w-100 hstack justify-content-center gap-2">
+                <label class="col-sm-12 col-md-6 p-0">
+                    <input type="text" name="search-term"
+                        class="form-control text-bg-dark p-2"
+                        placeholder="Search Movies"></label>
                 <button
-                    class="btn btn-outline-warning p-2 w-25 mx-2 col-sm-2"><span
+                    class="btn btn-outline-warning p-2 col-sm-12 col-md-2"><span
                         class="fa fa-search"></span></button>
             </div>
         </form>
