@@ -70,7 +70,7 @@
             </form>
         </div>
         <!-- Browsing Tiles -->
-        <div class="container">
+        <div class="container" id="tiles">
             <h4 class="result-count fw-light text-center"></h4>
             <div class="row first-row">
                 <!-- <div class="card col-lg-3 col-md-3 pt-2">
@@ -134,10 +134,11 @@
 
             <!-- pagination -->
             <div class="container p-3">
-                <button
+                <a href="#tiles"
                     class="btn btn-outline-warning mx-1"
-                    id="prev">Prev</button><button
-                    class="btn btn-outline-warning mx-1" id="next">Next</button>
+                    id="prev">Prev</a>
+                <a href="#tiles"
+                    class="btn btn-outline-warning mx-1" id="next">Next</a>
                 <p class="fw-bold py-2 px-1 page-number"></p>
             </div>
         </div>
