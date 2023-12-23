@@ -317,26 +317,31 @@ const highlight = () => {
 const page = (e) => {
 	console.log(global.currentPage);
 	switch (global.currentPage) {
+		case "/CineScope.io/":
+		case "/CineScope.io/index.html":
 		case "/":
 		case "/index.html":
-		case "/CineScope.io/index.html":
 			swiper("movie/upcoming");
 			popularMovies();
 			console.log("Home");
 			break;
+		case "/CineScope.io/shows.html":
 		case "/shows.html":
 			swiper("tv/airing_today");
 			popularShows();
 			console.log("Shows");
 			break;
+		case "/CineScope.io/movie-detail.html":
 		case "/movie-detail.html":
 			movieDetail();
 			console.log("Movie Detail");
 			break;
+		case "/CineScope.io/show-detail.html":
 		case "/show-detail.html":
 			showDetail();
 			console.log("Show Detail");
 			break;
+		case "/CineScope.io/search-page.html":
 		case "/search-page.html":
 			console.log("Search Page");
 			break;
