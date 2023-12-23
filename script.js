@@ -53,7 +53,6 @@ const alertUser = (className) => {
 // search functionality
 const search = async () => {
 	const query = window.location.search;
-	console.log(query);
 	const urlParams = new URLSearchParams(query);
 	global.search.type = urlParams.get("type");
 	global.search.term = urlParams.get("search-term");
@@ -72,7 +71,6 @@ const search = async () => {
 			firstRow.classList.toggle("text-danger");
 			alertUser("border-danger");
 		}
-		console.log(results);
 		searchResults(results);
 	} else {
 		alertUser("border-danger");
@@ -142,20 +140,21 @@ const pagination = () => {
 	global.search.page === 1
 		? prev.classList.add("disabled")
 		: prev.classList.remove("disabled");
-	console.log(global.search.page);
 };
 
-document.getElementById("prev").addEventListener("click", async () => {
-	global.search.page--;
-	const { results, total_pages } = await searchData();
-	searchResults(results);
-});
-document.getElementById("next").addEventListener("click", async () => {
-	global.search.page++;
-	const { results, total_pages } = await searchData();
+const increment = () => {
+	document.getElementById("prev").addEventListener("click", async () => {
+		global.search.page--;
+		const { results, total_pages } = await searchData();
+		searchResults(results);
+	});
+	document.getElementById("next").addEventListener("click", async () => {
+		global.search.page++;
+		const { results, total_pages } = await searchData();
 
-	searchResults(results);
-});
+		searchResults(results);
+	});
+};
 
 // swiper
 const swiper = async (end) => {
@@ -215,7 +214,6 @@ function swiperInit() {
 const popularMovies = async () => {
 	loadingStart();
 	const { results } = await fetchData("movie/popular");
-	console.log(results);
 	loadingEnd();
 	const firstRow = document.querySelector(".first-row");
 	results.forEach((movie) => {
@@ -266,7 +264,6 @@ const movieDetail = async () => {
 	loadingStart();
 	const movieId = window.location.search.split("=")[1];
 	const movie = await fetchData(`movie/${movieId}`);
-	console.log(movie);
 	const movie_detail = document.querySelector(".movie-details");
 	const movie_info = document.querySelector(".movie-info");
 	const backdrop = document.createElement("div");
@@ -349,7 +346,6 @@ const showDetail = async () => {
 
 	const showId = window.location.search.split("=")[1];
 	const show = await fetchData(`tv/${showId}`);
-	console.log(show);
 	const show_detail = document.querySelector(".show-details");
 	const show_info = document.querySelector(".show-info");
 	const backdrop = document.createElement("div");
@@ -481,6 +477,7 @@ const page = (e) => {
 		case "/CineScope.io/search-page.html":
 		case "/search-page.html":
 			search();
+			increment();
 			console.log("Search Page");
 			break;
 
